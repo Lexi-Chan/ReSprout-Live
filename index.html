@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <!-- iOS web app support -->
+    <!-- iOS 6 web app support -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
@@ -18,9 +18,47 @@
     <script src="scripts.js"></script>
 </head>
 
-<body onload="showMenu();">
+<body>
 
 <div id="app">
+
+    <!-- Main Menu -->
+    <div id="menu">
+
+        <img class="logo" src="images/sprout.png">
+
+        <img class="watch-button"
+             src="images/TV.png"
+             onclick="openPlayer();">
+
+    </div>
+
+
+    <!-- Player Page -->
+    <div id="player" class="hidden">
+
+        <div class="ticker">
+            <span>
+                ReSprout Live • Guide system coming soon • Enjoy the channel
+            </span>
+        </div>
+
+
+        <div class="video-box">
+
+            <video id="sproutVideo"
+                   controls
+                   autoplay
+                   width="100%"
+                   height="auto"
+                   src="https://app.viloud.tv/hls/channel/5e8820aab90d2a5f3f2cf78848b7814d.m3u8">
+
+            </video>
+
+        </div>
+
+    </div>
+
 </div>
 
 </body>
