@@ -8,69 +8,108 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 #app {
     width: 100%;
     height: 100%;
-    background-image: url("images/bg.png");
-    background-size: cover;
-    background-position: center;
 }
 
-.menu {
-    position: relative;
+
+/* Main menu */
+
+#menu {
     width: 100%;
     height: 100%;
+
+    background-image: url("images/bg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    position: relative;
 }
+
+
+/* Sprout logo */
 
 .logo {
     position: absolute;
+
     top: 15px;
     left: 15px;
+
+    max-width: 45%;
+    height: auto;
 }
 
+
+/* Watch Channel button */
+
 .watch-button {
+
     position: absolute;
+
     left: 50%;
     top: 50%;
+
+    width: 220px;
+    height: auto;
 
     margin-left: -110px;
     margin-top: -35px;
 
-    width: 220px;
-    height: 70px;
-
     cursor: pointer;
+
 }
 
-.page {
-    opacity: 0;
-}
 
-.fade-in {
-    opacity: 1;
-    transition: opacity 0.2s;
-}
+/* Player page */
 
-.player-page {
+#player {
+
     width: 100%;
     height: 100%;
-    background: black;
+
+    background: #000;
+
     position: relative;
+
 }
 
-.video-box {
-    width: 100%;
-    max-width: 960px;
-    margin: auto;
-    padding-top: 20px;
+
+.hidden {
+    display: none;
 }
 
-video {
-    width: 100%;
-    height: auto;
+
+/* Small page transition */
+
+.page-flip {
+
+    animation: flipPage 0.2s ease-in;
+
 }
+
+
+@keyframes flipPage {
+
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* Ticker */
 
 .ticker {
+
     position: absolute;
 
     top: 0;
@@ -79,19 +118,62 @@ video {
     width: 100%;
     height: 25px;
 
-    background: rgba(0,0,0,0.7);
-
-    color: white;
-
-    line-height: 25px;
-
-    font-size: 13px;
-
     overflow: hidden;
     white-space: nowrap;
+
+    background: rgba(0,0,0,0.75);
+
+    color: #ffffff;
+
+    font-size: 13px;
+    line-height: 25px;
+
+    z-index: 5;
+
 }
 
+
 .ticker span {
+
     display: inline-block;
+
     padding-left: 100%;
+
+    animation: tickerMove 12s linear infinite;
+
+}
+
+
+@keyframes tickerMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+/* Video */
+
+.video-box {
+
+    width: 100%;
+
+    padding-top: 25px;
+
+    text-align: center;
+
+}
+
+
+video {
+
+    width: 100%;
+
+    height: auto;
+
 }
