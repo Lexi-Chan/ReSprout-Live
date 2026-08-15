@@ -33,8 +33,8 @@ function openPlayer() {
 
         '<div class="video-box">' +
             '<video controls autoplay>' +
-                '<source src="TV.m3u8" type="application/x-mpegURL">' +
-            '</video>' +
+                '<source src="https://app.viloud.tv/hls/channel/5e8820aab90d2a5f3f2cf78848b7814d.m3u8" type="application/x-mpegURL">' +
+            '<videoo>' +
         '</div>' +
 
     '</div>';
